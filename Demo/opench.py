@@ -1,0 +1,12 @@
+from selenium import webdriver
+driver = webdriver.Chrome("C:\\Users\\Akshay\\Downloads\\chrome\\chromedriver")
+driver.maximize_window()
+driver.get("http://demo.actitime.com")
+driver.find_element_by_xpath("//input[@id='username']").send_keys('admin')
+driver.find_element_by_xpath("//input[@name='pwd']").send_keys('manager')
+driver.find_element_by_xpath('//*[@id="loginButton"]/div').click()
+driver.implicitly_wait(30)
+driver.find_element_by_xpath("//div[text()='Tasks']").click()
+driver.find_element_by_xpath("//div[text()='Add New']").click()
+driver.find_element_by_xpath("//div[text()='+ New Customer']").click()
+driver.find_element_by_xpath('//div[@class="greyButton cancelBtn"]').click()
